@@ -6,7 +6,7 @@
 /*   By: kchaouki <kchaouki@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 10:29:09 by kchaouki          #+#    #+#             */
-/*   Updated: 2023/02/07 10:08:22 by kchaouki         ###   ########.fr       */
+/*   Updated: 2023/02/08 18:58:32 by kchaouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,33 @@ void	ft_rotate(t_stack **stack, char *rule_name)
 	t_stack	*tmp_stack;
 	t_stack	*poped;
 
-	poped_to_down = NULL;
-	tmp_stack = NULL;
-	poped = NULL;
-	pop(stack, &poped_to_down);
-	while ((*stack))
+	if (*stack && (*stack)->next)
 	{
-		pop(stack, &poped);
-		push(&tmp_stack, &poped);
+		poped_to_down = NULL;
+		tmp_stack = NULL;
+		poped = NULL;
+		pop(stack, &poped_to_down);
+		while ((*stack))
+		{
+			pop(stack, &poped);
+			push(&tmp_stack, &poped);
+		}
+		push(stack, &poped_to_down);
+		while (tmp_stack)
+		{
+			pop(&tmp_stack, &poped);
+			push(stack, &poped);
+		}
+		ft_putstr_fd(rule_name, 1);
 	}
-	push(stack, &poped_to_down);
-	while (tmp_stack)
+}
+
+void	ft_rr(t_stack **stack_a, t_stack **stack_b, char *rule_name)
+{
+	if (*stack_a && *stack_b)
 	{
-		pop(&tmp_stack, &poped);
-		push(stack, &poped);
+		ft_rotate(stack_a, NULL);
+		ft_rotate(stack_b, NULL);
+		ft_putstr_fd(rule_name, 1);
 	}
-	ft_putstr_fd(rule_name, 1);
 }

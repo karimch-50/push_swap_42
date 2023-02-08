@@ -6,7 +6,7 @@
 /*   By: kchaouki <kchaouki@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 11:06:15 by kchaouki          #+#    #+#             */
-/*   Updated: 2023/02/07 10:07:23 by kchaouki         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:04:34 by kchaouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void	ft_apply_rr(t_stack **stack_a, t_stack **stack_b, int *rr)
 {
 	while ((*rr))
 	{
-		ft_rotate(stack_a, "");
-		ft_rotate(stack_b, "rr\n");
+		ft_rr(stack_a, stack_b, "rr\n");
 		(*rr)--;
 	}
 }
@@ -26,8 +25,7 @@ void	ft_apply_rrr(t_stack **stack_a, t_stack **stack_b, int *rrr)
 {
 	while ((*rrr))
 	{
-		ft_rev_rotate(stack_a, "");
-		ft_rev_rotate(stack_b, "rrr\n");
+		ft_rrr(stack_a, stack_b, "rrr\n");
 		(*rrr)--;
 	}
 }

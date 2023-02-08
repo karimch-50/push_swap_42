@@ -6,7 +6,7 @@
 /*   By: kchaouki <kchaouki@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 16:20:33 by kchaouki          #+#    #+#             */
-/*   Updated: 2023/02/07 10:10:42 by kchaouki         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:02:22 by kchaouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,11 @@ void	push(t_stack **stack, t_stack **to_push);
 void	pop(t_stack **stack, t_stack **poped);
 
 void	ft_swap(t_stack **stack, char *rule_name);
+void	ft_ss(t_stack **stack_a, t_stack **stack_b, char *rule_name);
 void	ft_rotate(t_stack **stack, char *rule_name);
+void	ft_rr(t_stack **stack_a, t_stack **stack_b, char *rule_name);
 void	ft_rev_rotate(t_stack **stack, char *rule_name);
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b, char *rule_name);
 void	ft_p(t_stack **stack_a, t_stack **stack_b, char a_b, int shee);
 
 /*#######################################################################

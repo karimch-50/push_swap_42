@@ -6,7 +6,7 @@
 #    By: kchaouki <kchaouki@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/04 16:20:20 by kchaouki          #+#    #+#              #
-#    Updated: 2023/02/07 10:30:43 by kchaouki         ###   ########.fr        #
+#    Updated: 2023/02/08 08:42:47 by kchaouki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,10 +70,10 @@ $(LIBFT):
 %.o : %.c
 	$(CCe) -c $< -o $@
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) includes/push_swap.h
 	$(CCe) $(OBJS) $(LIBFT) -o $(NAME)
 
-$(NAME_B): $(OBJS_B)
+$(NAME_B): $(OBJS_B) includes/get_next_line.h includes/push_swap_bonus.h
 	$(CCe) $(OBJS_B) $(LIBFT) -o $(NAME_B)
 
 clean:
@@ -86,4 +86,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: fclean clean all re libft
+.PHONY: fclean clean all re
