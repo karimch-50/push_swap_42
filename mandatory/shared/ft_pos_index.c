@@ -6,7 +6,7 @@
 /*   By: kchaouki <kchaouki@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:02:47 by kchaouki          #+#    #+#             */
-/*   Updated: 2023/02/07 10:07:52 by kchaouki         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:09:13 by kchaouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_pos_index(t_stack *stack, int pos)
 
 	tmp = stack;
 	index = 0;
-	while (tmp->pos != pos)
+	while (tmp && tmp->pos != pos)
 	{
 		index++;
 		tmp = tmp->next;

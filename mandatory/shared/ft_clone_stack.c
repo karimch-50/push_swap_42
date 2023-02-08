@@ -6,7 +6,7 @@
 /*   By: kchaouki <kchaouki@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:01:55 by kchaouki          #+#    #+#             */
-/*   Updated: 2023/02/07 10:07:39 by kchaouki         ###   ########.fr       */
+/*   Updated: 2023/02/08 20:33:16 by kchaouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,25 @@ t_stack	*ft_clone_stack(t_stack **stack)
 {
 	t_stack	*cloned;
 	t_stack	*tmp;
+	int		i;
+	int		j;
 
+	i = 0;
 	cloned = NULL;
 	tmp = *stack;
 	while (tmp)
 	{
-		ft_add_to_stack(&cloned, tmp->num, tmp->pos);
+		i++;
 		tmp = tmp->next;
+	}
+	while (i)
+	{
+		tmp = *stack;
+		j = 0;
+		while (j++ < i - 1)
+			tmp = tmp->next;
+		ft_add_to_stack(&cloned, tmp->num, tmp->pos);
+		i--;
 	}
 	return (cloned);
 }

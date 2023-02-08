@@ -6,7 +6,7 @@
 /*   By: kchaouki <kchaouki@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:14:00 by kchaouki          #+#    #+#             */
-/*   Updated: 2023/02/07 10:08:35 by kchaouki         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:46:08 by kchaouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,11 @@ static t_stack	*ft_args_checker(int argc, char **argv)
 	if (!split || !ft_check_two(split))
 		return (NULL);
 	while (split[i])
-		ft_add_to_stack(&stack, ft_atoi(split[i++]), 0);
+		i++;
+	while (i--)
+		ft_add_to_stack(&stack, ft_atoi(split[i]), 0);
 	ft_free_split(split);
-	ft_set_pos(&stack);
-	return (stack);
+	return (ft_set_pos(&stack), stack);
 }
 
 t_stack	*ft_resolver(int argc, char **argv)
