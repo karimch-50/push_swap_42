@@ -6,7 +6,7 @@
 /*   By: kchaouki <kchaouki@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:14:00 by kchaouki          #+#    #+#             */
-/*   Updated: 2023/02/08 19:46:08 by kchaouki         ###   ########.fr       */
+/*   Updated: 2023/02/09 12:09:08 by kchaouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ static t_stack	*ft_args_checker(int argc, char **argv)
 	split = ((i = 0), ft_split(joined_args, ' '));
 	free(joined_args);
 	if (!split || !ft_check_two(split))
-		return (NULL);
+		return (ft_free_split(split), NULL);
 	while (split[i])
 		i++;
 	while (i--)
