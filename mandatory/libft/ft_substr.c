@@ -6,7 +6,7 @@
 /*   By: kchaouki <kchaouki@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 12:02:26 by kchaouki          #+#    #+#             */
-/*   Updated: 2022/10/14 17:24:18 by kchaouki         ###   ########.fr       */
+/*   Updated: 2023/02/09 12:53:00 by kchaouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if ((size_t)start > ft_strlen(s))
 		return (ft_strdup(""));
+	if (len > ft_strlen(s) - (size_t)start)
+		len = ft_strlen(s) - (size_t)start;
 	ret_str = (char *)malloc(sizeof(char) * len + 1);
 	if (!s || !ret_str)
 		return (0);

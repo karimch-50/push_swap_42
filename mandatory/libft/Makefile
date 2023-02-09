@@ -6,7 +6,7 @@
 #    By: kchaouki <kchaouki@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/14 17:09:09 by kchaouki          #+#    #+#              #
-#    Updated: 2022/12/30 07:44:52 by kchaouki         ###   ########.fr        #
+#    Updated: 2023/02/09 13:00:52 by kchaouki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ OBJS = $(SRCS:.c=.o)
 
 OBJS_B = $(SRCS_B:.c=.o)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) libft.h
 	ar rcs $(NAME) $(OBJS)
 
 %.o : %.c
